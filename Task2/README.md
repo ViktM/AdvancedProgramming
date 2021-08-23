@@ -18,7 +18,7 @@ communication.
 
 ## AbstractCommsLibrary
 
-It was going to provide and abstract interface to both Server and Client.
+It was going to provide an abstract interface to both Server and Client.
 Due to lack of time, I could not wire in this library, but wanted to demonstrate
 the initial idea. 
 A copy of the abstract Comms class currently lives in the Server and Client projects. 

@@ -168,3 +168,5 @@
 /Task1/Game/cmake-build-debug/Game
 /Task1/Game/cmake-build-debug/Game.cbp
 /Task1/Game/cmake-build-debug/Makefile
+/Task2/Server/cmake-build-debug/CMakeFiles/Server.dir/src/exceptions/ConnectionCouldNotBeEstablishedOnPortException.cpp.o
+/Task2/Server/cmake-build-debug/CMakeFiles/Server.dir/src/exceptions/NoResponseReceivedException.cpp.o

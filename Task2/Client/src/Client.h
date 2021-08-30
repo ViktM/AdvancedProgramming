@@ -11,8 +11,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#include "exceptions/NoSocketAvailableException.h"
 #include "Comms.h"
+#include "exceptions/NoSocketAvailableException.h"
 #include "exceptions/CouldNotEstablishConnectionException.h"
 #include "exceptions/CouldNotSendUserInputException.h"
 #include "exceptions/ConnectionQuitException.h"
@@ -66,7 +66,6 @@ private:
 
             if (sendInput == -1) {
                 throw CouldNotSendUserInputException();
-                continue; // break here or continue to try again - I decided to break
             }
 
             memset(buffer, 0, 4096);

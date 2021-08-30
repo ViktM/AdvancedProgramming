@@ -12,11 +12,11 @@
 #include <netdb.h>
 #include <unistd.h>
 
+#include "Comms.h"
 #include "exceptions/NoSocketAvailableException.h"
 #include "exceptions/CouldNotBindPortException.h"
 #include "exceptions/CouldNotConnectToSocketException.h"
 #include "exceptions/CouldNotConnectToClientException.h"
-#include "Comms.h"
 #include "exceptions/ConnectionCouldNotBeEstablishedOnPortException.h"
 #include "exceptions/NoResponseReceivedException.h"
 
@@ -95,17 +95,16 @@ private:
         char buffer[4096];
 
         while (true) {
-            memset(buffer, 0, 4096);
-
             long response = recv(clientSocket, buffer, 4096, 0);
             if (response == -1) {
                 throw NoResponseReceivedException();
             }
             if (response == 0) {
-                throw new CouldNotConnectToClientException();
+                throw CouldNotConnectToClientException();
             }
             cout << "Client response: " << string(buffer, 0, response) << endl;
             send(clientSocket, buffer, response - 1, 0);
+            memset(buffer, 0, 4096);
         }
     }
 };

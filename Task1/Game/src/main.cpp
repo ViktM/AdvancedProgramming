@@ -17,17 +17,17 @@ void Term() {
 int main() {
     std::cout << "Hello, Game!" << std::endl;
 
-    Game game = Game(2);
+    auto *game = new Game(2);
 
-    game.SetInitialise(Init);
+    game->SetInitialise(Init);
 
-    game.SetTerminate(Term);
+    game->SetTerminate(Term);
 
-    game.Add(new GameComponent());
+    game->Add(new GameComponent());
 
-    game.Add(new DrawableGameComponent(0, 0));
+    game->Add(new DrawableGameComponent(0, 0));
 
-    game.Run();
+    game->Run();
 
     return 0;
 }
